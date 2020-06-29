@@ -7,7 +7,7 @@
 
 makeCacheMatrix <- function(x = matrix()) {
 
-        # initialize the inverse of matrix x that is to be computed
+        # initialize the inverse of matrix x
         invx <- NULL
         
         # sets the the value of the matrix x
@@ -19,10 +19,10 @@ makeCacheMatrix <- function(x = matrix()) {
         # gets the value of the matrix x
         get <- function() x
         
-        # sets the inverse of the matrix (i.e. invx)
+        # sets the inverse of the matrix (i.e. invx) in the cache
         setinv <- function(inverseX) invx <<- inverseX
         
-        # gets the inverse of the matrix x, (i.e. invx)
+        # gets the inverse of the matrix x, (i.e. invx) from the cache
         getinv <- function() invx
         
         # returns a list of the functions
@@ -51,7 +51,7 @@ cacheSolve <- function(x, ...) {
         data <- x$get()
         
         # calculates the inverse of the square matrix
-        inv <- solve(data)
+        inv <- solve(data, ...)
         
         # sets the value of the calculated inverse in the cache
         x$setinv(invx)
