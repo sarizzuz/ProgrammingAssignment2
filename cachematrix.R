@@ -51,7 +51,7 @@ cacheSolve <- function(x, ...) {
         data <- x$get()
         
         # calculates the inverse of the square matrix
-        inv <- solve(data, ...)
+        inv <- solve(data)
         
         # sets the value of the calculated inverse in the cache
         x$setinv(invx)
